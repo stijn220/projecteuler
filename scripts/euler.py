@@ -43,7 +43,7 @@ def is_prime(x:int):
 
 def prime_generator():
     """Return a stream of prime numbers"""
-    count = 3
+    count = 2
     
     while True:
         isprime = True

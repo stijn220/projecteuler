@@ -18,9 +18,9 @@ def odds(a):
 						
 @solution
 def solve():
-	 squares = square_list(384000)
-	 odds_list = odds(squares)
-	 return sum(odds_list)
+	squares = square_list(384000)
+	odds_list = odds(squares)
+	return sum(odds_list)
 	
 
 solve()
