@@ -43,21 +43,22 @@ def is_prime(x:int):
 
 def prime_generator():
     """Return a stream of prime numbers"""
-    count = 2
-    
+    primes = [2]
+    yield 2
+    num = 3
     while True:
-        isprime = True
-        
-        for x in range(2, int(math.sqrt(count) + 1)):
-            if count % x == 0: 
-                isprime = False
+        is_prime = True
+        square_root = math.sqrt(num)
+        for prime in primes:
+            if num % prime == 0:
+                is_prime = False
                 break
-        
-        if isprime:
-            yield count
-        
-        count += 1
-        
+            if prime > square_root:
+                break
+        if is_prime:
+            primes.append(num)
+            yield num
+        num += 2
 
 
 def is_palindromic(x:str):
