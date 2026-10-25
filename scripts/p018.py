@@ -28,7 +28,7 @@
 # NOTE: As there are only 16384 routes, it is possible to solve this problem by trying every route. However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! (c;
 from euler import solution
 
-data = """75
+data_tiangle = """75
 95 64
 17 47 82
 18 35 87 10
@@ -47,7 +47,7 @@ data = """75
 
 
 @solution
-def solve():
+def solve(data):
     data_list = []
     data_index = []
     size = 0
@@ -94,4 +94,6 @@ def solve():
                 if alt < distances[v]:
                     distances[v] = alt
     return len(data_list) * 100 - min(distances[-len(data_list):])
-solve()
+
+if __name__ == "__main__":
+    solve(data_tiangle)

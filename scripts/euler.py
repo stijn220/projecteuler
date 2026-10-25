@@ -6,7 +6,7 @@ def solution(func):
     
     def inner(*args, **kwargs):
         start = time.time()
-        answer = func()
+        answer = func(*args, **kwargs)
         end = time.time()
         runtime = round(end - start, 3)
         print(f"Finished:")
@@ -80,7 +80,7 @@ def factors(x:int) -> List[int]:
             return []
         z = x/y
         if is_whole(z):
-            factor_set.add(y)
+            factor_set.add(int(y))
             factor_set.add(int(z))
     return list(factor_set)
 
